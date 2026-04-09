@@ -3,9 +3,10 @@ import { ScrollView, Text, View } from "react-native";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { ModalDetalles } from "../components/ModalDetalles";
 import { UnidadCard } from "../components/UnidadCard";
-import "../global.css"; // Estilos globales de Tailwind/NativeWind
 import { useDatosTermo } from "../hooks/useDatosTermo";
 import { UnidadProcesada } from "../types";
+
+import "../global.css";
 
 export default function Index() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -21,8 +22,8 @@ export default function Index() {
 
   if (cargando) {
     return (
-      <View className="flex-1 bg-primary justify-center items-center">
-        <Text className="text-lg text-white text-center mt-12">
+      <View className="flex-1 bg-blue-500 justify-center items-center">
+        <Text className="text-lg text-white text-center">
           🌤️ Cargando datos...
         </Text>
       </View>
@@ -30,13 +31,13 @@ export default function Index() {
   }
 
   return (
-    <View className="flex-1 bg-primary">
-      <Text className="text-3xl font-bold text-white text-center mt-12 mb-5 drop-shadow-lg">
+    <View className="flex-1 bg-blue-600">
+      <Text className="text-3xl font-bold text-white text-center mt-12 mb-5 drop-shadow-md">
         ⚡ CTE Ernesto Guevara ⚡
       </Text>
 
       <ScrollView
-        contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 30 }}
+        contentContainerStyle={{ paddingVertical: 10 }}
         showsVerticalScrollIndicator={false}
       >
         {error && <ErrorMessage onReintentar={obtenerDatos} />}
@@ -46,7 +47,7 @@ export default function Index() {
             <UnidadCard key={index} unidad={unidad} onPress={mostrarDetalles} />
           ))}
 
-        <Text className="text-base font-medium text-white text-center mt-5 mb-2.5 opacity-90">
+        <Text className="text-base font-medium text-white text-center mt-3 mb-5">
           Última Actualización: {ultimaActualizacion}
         </Text>
       </ScrollView>
