@@ -10,7 +10,7 @@ interface Props {
 export const UnidadCard: React.FC<Props> = ({ unidad, onPress }) => {
   return (
     <Pressable
-      className="bg-white/15 rounded-2xl mb-5 py-5 px-4 border border-white/15 shadow-md mx-4
+      className="bg-white/15 rounded-2xl mb-5 py-5 px-4 border border-white/15 mx-4
        active:bg-white/30 active:scale-95"
       onPress={() => onPress(unidad)}
     >

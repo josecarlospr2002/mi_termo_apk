@@ -1,7 +1,7 @@
 import mockData from "../mocks/data.json";
 import { DatosAPI } from "../types";
 
-const USAR_MOCK = false; //true para usar los datos de mocks
+const USAR_MOCK = true; //true para usar los datos de mocks
 
 export const termoService = {
   obtenerDatosCargaActiva: async (): Promise<DatosAPI[]> => {
