@@ -24,7 +24,6 @@
     },
     "plugins": [
       "expo-router",
-      "expo-build-properties",
       [
         "expo-splash-screen",
         {
@@ -35,7 +34,24 @@
           }
         }
       ],
-      "expo-build-properties"
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "networkSecurityConfig": {
+              "cleartextTrafficPermitted": true,
+              "domains": [
+                {
+                  "host": "web.ctehabana.une.cu",
+                  "includeSubdomains": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "expo-web-browser",
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,
