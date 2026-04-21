@@ -18,7 +18,7 @@ export const ErrorMessage: React.FC<Props> = ({ onReintentar }) => {
   };
 
   return (
-    <View className="bg-white rounded-xl p-5 items-center mt-5 shadow-md">
+    <View className="bg-white rounded-xl p-5 items-center mt-5 shadow-md mx-4">
       <Text className="text-lg font-bold text-red-600">
         ❌ ERROR DE CONEXIÓN
       </Text>
